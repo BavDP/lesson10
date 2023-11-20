@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/fruitName"
+            style="@style/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="name" />
+
+        <TextView
+            android:id="@+id/familyLabel"
+            style="@style/label"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:text="@string/family"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fruitName" />
+
+        <TextView
+            android:id="@+id/family"
+            style="@style/classification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            app:layout_constraintStart_toEndOf="@id/familyLabel"
+            app:layout_constraintTop_toBottomOf="@id/fruitName"
+            tools:text="family" />
+
+        <TextView
+            android:id="@+id/orderLabel"
+            style="@style/label"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:text="@string/order"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/familyLabel" />
+
+        <TextView
+            android:id="@+id/order"
+            style="@style/classification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            app:layout_constraintStart_toEndOf="@id/orderLabel"
+            app:layout_constraintTop_toBottomOf="@id/familyLabel"
+            tools:text="order" />
+
+        <TextView
+            android:id="@+id/genusLabel"
+            style="@style/label"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:text="@string/genus"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/orderLabel" />
+
+        <TextView
+            android:id="@+id/genus"
+            style="@style/classification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            app:layout_constraintStart_toEndOf="@id/genusLabel"
+            app:layout_constraintTop_toBottomOf="@id/orderLabel"
+            tools:text="genus" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
