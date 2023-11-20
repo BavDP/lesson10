@@ -18,5 +18,10 @@
     </style>
     <style name="classification" parent="@style/margins">
         <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/design_default_color_primary_dark</item>
+    </style>
+    <style name="nutritionValue" parent="@style/classification">
+        <item name="android:layout_width">40dp</item>
+        <item name="android:gravity">right</item>
     </style>
 </resources>

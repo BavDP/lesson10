@@ -7,13 +7,16 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="?android:attr/selectableItemBackground"
+        >
 
         <TextView
             android:id="@+id/fruitName"
             style="@style/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="?android:attr/actionModeBackground"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="name" />
@@ -74,5 +77,12 @@
             app:layout_constraintStart_toEndOf="@id/genusLabel"
             app:layout_constraintTop_toBottomOf="@id/orderLabel"
             tools:text="genus" />
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/genusLabel">
+
+        </com.google.android.material.divider.MaterialDivider>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

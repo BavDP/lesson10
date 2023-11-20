@@ -14,20 +14,22 @@ import com.dnipro.beldii.lesson10.model.Fruit;
 import java.util.ArrayList;
 
 public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder> {
-    ArrayList<Fruit> fruits;
+    private ArrayList<Fruit> fruits;
+    private View.OnClickListener itemClick;
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    protected static class ViewHolder extends RecyclerView.ViewHolder {
+        private final View item;
         private final TextView fruitNameTextView;
         private final TextView familyTextView;
         private final TextView orderTextView;
         private final TextView genusTextView;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            item = itemView;
             fruitNameTextView = itemView.findViewById(R.id.fruitName);
             orderTextView = itemView.findViewById(R.id.order);
             familyTextView = itemView.findViewById(R.id.family);
             genusTextView = itemView.findViewById(R.id.genus);
-
         }
 
         public void bind(Fruit data) {
@@ -36,9 +38,15 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder> 
             this.familyTextView.setText(data.getFamily());
             this.genusTextView.setText(data.getGenus());
         }
+
+        public void setClickHandler(View.OnClickListener clickHandler, Fruit fruit) {
+            this.item.setOnClickListener(clickHandler);
+            this.item.setTag(fruit);
+        }
     }
 
     public FruitAdapter(ArrayList<Fruit> fruits) {
+        super();
         this.fruits = fruits;
     }
 
@@ -53,6 +61,11 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder> 
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Fruit fruit = this.fruits.get(position);
         holder.bind(fruit);
+        holder.setClickHandler(itemClick, fruit);
+    }
+
+    public void setClickListener(View.OnClickListener clickListener) {
+        this.itemClick = clickListener;
     }
 
     @Override
